@@ -11,7 +11,8 @@
 
 <button onclick="sendPost()" id="post" type="submit">
 	Post
-</button>
+</button> <button onclick="clear()" >Clear </button>
+	
 
 <div class="image">
 	<p id="show" class="bg">
@@ -29,11 +30,17 @@
 		// console.log(newPost)
 		quotes.push(newPost)
 		// console.log(quotes)
-	}
+	};function clear(){ quote.length = [] 
+	
+	} 
+	
 	function getPost(){
 		let random = Math.floor(Math.random() * quotes.length)
 		document.getElementById('show').innerHTML = quotes[random];
 	}
+	
+	
+	
 getPost();
 setInterval(getPost, 86400000)
 
