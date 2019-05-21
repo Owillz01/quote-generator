@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Quote Generator</title>
+</head>
+<body>
+
+<div class="write">
+	<input type="text" width="70" height="40" id="content">
+</div>
+
+<button onclick="sendPost()" id="post" type="submit">
+	Post
+</button>
+
+<div class="image">
+	<p id="show" class="bg">
+		
+	</p>
+</div>
+
+<script>
+	
+	let quotes = [];
+	
+
+	function sendPost(){
+		let newPost = document.getElementById('content').value
+		// console.log(newPost)
+		quotes.push(newPost)
+		// console.log(quotes)
+	}
+	function getPost(){
+		let random = Math.floor(Math.random() * quotes.length)
+		document.getElementById('show').innerHTML = quotes[random];
+	}
+getPost();
+setInterval(getPost, 2000)
+
+</script>
+
+<style>
+	.image{
+		
+		background-image: url(bg.jpg);
+		background-repeat: no-repeat;
+	}
+	
+	.bg{
+		background: rgba(0,0,0, 0.4);
+		padding:100px; 
+		max-width: 90%;
+		color: white;
+		font-size: 24px;
+		text-align: center;
+
+	}
+</style>
+
+</body>
+</html>
